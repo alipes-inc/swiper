@@ -14,7 +14,6 @@ const Parallax = {
     let y = $el.attr('data-swiper-parallax-y');
     const scale = $el.attr('data-swiper-parallax-scale');
     const opacity = $el.attr('data-swiper-parallax-opacity');
-
     if (x || y) {
       x = x || '0';
       y = y || '0';
@@ -63,7 +62,7 @@ const Parallax = {
         slideProgress += Math.ceil(slideIndex / 2) - (progress * (snapGrid.length - 1));
       }
       slideProgress = Math.min(Math.max(slideProgress, -1), 1);
-      $(slideEl).find('[data-swiper-parallax], [data-swiper-parallax-x], [data-swiper-parallax-y]')
+      $(slideEl).find('.slide-parallax[data-swiper-parallax], .slide-parallax[data-swiper-parallax-x], .slide-parallax[data-swiper-parallax-y]')
         .each((index, el) => {
           swiper.parallax.setTransform(el, slideProgress);
         });
